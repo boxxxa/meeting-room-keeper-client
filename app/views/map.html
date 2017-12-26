@@ -1,0 +1,58 @@
+<!--Map angular template-->
+<div class="container">
+    <div class="row row-content" ng-controller="MapController">
+        <div ng-include="'views/additem.html'"></div>
+        <div class="col-xs-12">
+            <svg version="1.1" id="map" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 1170 300" enable-background="new 0 0 1170 300" xml:space="preserve">
+                <image overflow="visible" width="1170" height="300" id="bitmap" xlink:href="images/campusmap.jpg"></image>
+                <polygon id="Terrace" class='freeRoom' points="260,231 36,231 135,100 302,99 248.6,212.7 ">
+                    <title id='Terrace_title'>Terrace</title>
+                </polygon>
+                <polygon id="Small_Room" class='freeRoom' points="607.3,147.8 512.3,146.5 517.5,105 584.9,105 607.3,118 ">
+                    <title id='Small_Room_title'>Small_Room</title>
+                </polygon>
+                <polygon id="Bright_Room" class='freeRoom' points="854,205 733.5,205 715.5,112.5 736,112.5 740,123 798.2,124 
+                         793.5,112.5 821.5,112.5 ">
+                    <title id='Bright_Room_title'>Bright_Room</title>
+                </polygon>    
+                <polygon id="Cafe" class='freeRoom' points="1154,147.8 934,147.8 917,110 973,109 994.5,69.5 956.5,13 1037.5,11 ">
+                    <title id='Cafe_title'>Cafe</title>
+                </polygon>
+            </svg>
+        </div>
+        <div class="col-xs-12" ng-if="error">
+            <h3>{{message}}</h3>
+        </div>
+
+        <div class="col-xs-12" ng-if = "!error">
+            <h3>Ongoing Events</h3>
+            <button type="button" class="btn btn-default" ng-click="reloadRoute()">
+                <i class="fa fa-refresh" aria-hidden="true"></i> Refresh</button>
+            <button class="btn btn-default" role="button" ng-click="showAddItemModal()">Schedule</button>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tr>
+                        <th>type</th></h3>
+                        <th>name</th>
+                        <th>start</th>
+                        <th>end</th>
+                        <th>place</th>
+                        <th>action</th>
+                    </tr>
+                    <tr ng-repeat="item in items">
+                        <td ng-init="setRoomTitle(item)">{{item.item_type.name}}</td>
+                        <td>{{item.name}}</td>
+                        <td title="UTC time: {{item.start_date}}">{{item.start_date| localDateTime}}</td>
+                        <td title="UTC time: {{item.end_date}}">{{item.end_date| localDateTime}}</td>
+                        <td ng-init="setRoomBusy(item.place.name)">{{item.place.name}}</td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-xs" title="Delete Event" ng-click="deleteItem(item.id)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+

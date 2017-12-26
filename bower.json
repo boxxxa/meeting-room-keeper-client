@@ -1,0 +1,32 @@
+{
+  "name": "meeting-room-keeper-client",
+  "version": "0.1.0",
+  "description": "Meeting Room Keeper WEB Client",
+  "main": "app/index.html",
+  "moduleType": [],
+  "keywords": [
+  ],
+  "authors": [
+    "VKargapolov"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0",
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "angular-ui-router": "~0.3.1",
+    "angular-resource": "~1.4.7"
+  },
+  "resolutions": {
+    "angular": "~1.4.7"
+  }
+}

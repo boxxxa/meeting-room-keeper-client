@@ -1,0 +1,10 @@
+<svg version="1.1" id="map_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 1170 300" enable-background="new 0 0 1170 300" xml:space="preserve">
+<image overflow="visible" width="1170" height="300" id="bitmap" xlink:href="images/campusmap.jpg"  transform="matrix(0.9999 0 0 0.9999 0 0)">
+</image>
+<polygon id="Terrace" opacity="0.5" fill="#07CA00" points="260,231 36,231 135,100 302,99 248.6,212.7 "/>
+<polygon id="Small_Room" opacity="0.5" fill="#07CA00" points="607.3,147.8 512.3,146.5 517.5,105 584.9,105 607.3,118 "/>
+<polygon id="Bright_Room" opacity="0.5" fill="#07CA00" points="854,205 733.5,205 715.5,112.5 736,112.5 740,123 798.2,124 
+	793.5,112.5 821.5,112.5 "/>
+<polygon id="Cafe" opacity="0.5" fill="#07CA00" points="1154,147.8 934,147.8 917,110 973,109 994.5,69.5 956.5,13 1037.5,11 "/>
+</svg>

@@ -1,0 +1,74 @@
+<div class="modal fade" role="dialog" id="addItemModal">
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" aria-label="Close" ng-click="hideAddItemModal()"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Insert New Event</h3>
+            </div>
+            <form id="addItemForm" name='addItemForm' class="form-horizontal" role="form" ng-submit="addNewItem()">
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label class="col-xs-12 col-sm-2 control-label">
+                            Name
+                        </label>
+                        <div class="col-xs-12 col-sm-8">
+                            <input type="text" class="form-control" name="name" placeholder="Enter Event Name"
+                                   ng-model="newItem.name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-12 col-sm-2 control-label">
+                            Description
+                        </label>
+                        <div class="col-xs-12 col-sm-8">
+                            <input type="text" class="form-control" name="description" placeholder="Enter Event Description"
+                                   ng-model="newItem.description">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-12 col-sm-2 control-label">
+                            Event's Start (ISO8601)
+                        </label>
+                        <div class="col-xs-12 col-sm-8">
+                            <input type="text" class="form-control" name="start_date" placeholder="ISO8601 Format"
+                                   ng-model="newItem.start_date">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-12 col-sm-2 control-label">
+                            Event's End (ISO 8601)
+                        </label>
+                        <div class="col-xs-12 col-sm-8">
+                            <input type="text" class="form-control" name="end_date" placeholder="ISO8601 Format"
+                                   ng-model="newItem.end_date">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-12 col-sm-2 control-label">
+                            Place
+                        </label>
+                        <div class="col-xs-12 col-sm-8">
+                            <select ng-model="newItem.place_id">
+                                <option ng-repeat="place in places" ng-value=place.id>
+                                    {{place.name}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click="hideAddItemModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" ng-disabled="addItemForm.$invalid" ng-click="hideAddItemModal()">Schedule</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+
+    </div><!-- /.modal-dialog -->
+</div>
